@@ -15,9 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.title = "오늘 커밋 며칠째?"
-//        if let button = statusItem.button {
-//            button.action = #selector(getNumberToShow)
-//        }
         constructMenu()
     }
     
@@ -26,7 +23,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var n = 0
         dataTask(url: url) { results in
             let commits = results.toCommitsInfo()
+            print(commits)
             for (i, c) in commits.reversed().enumerated() {
+                print(c)
                 if c != "0" {
                     n = n + 1
                 } else {
@@ -73,7 +72,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func constructMenu() {
         let menu = NSMenu()
         
-        menu.addItem(NSMenuItem(title: "Update", action: #selector(AppDelegate.getNumberToShow), keyEquivalent: "P"))
+        menu.addItem(NSMenuItem(title: "Update", action: #selector(AppDelegate.getNumberToShow), keyEquivalent: "u"))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
@@ -97,7 +96,7 @@ extension String
 {
     func toCommitsInfo() -> [String]
     {
-        if let regex = try? NSRegularExpression(pattern: "data-count=\"[0-9]\"+", options: .caseInsensitive)
+        if let regex = try? NSRegularExpression(pattern: "data-count=\"[0-9]\"+|data-count=\"[0-9][0-9]\"+", options: .caseInsensitive)
         {
             let string = self as NSString
             

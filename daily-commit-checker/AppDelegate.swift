@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = statusItem.button {
             button.action = #selector(getNumberToShow)
         }
+        constructMenu()
     }
     
     @objc func getNumberToShow() {
@@ -68,6 +69,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         task.resume()
         
     }
+    
+    func constructMenu() {
+        let menu = NSMenu()
+        
+//        menu.addItem(NSMenuItem(title: "About daily-checker", action: #selector(AppDelegate.linkAboutPage), keyEquivalent: "P"))
+//        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        
+        statusItem.menu = menu
+    }
+    
+//    @objc func linkAboutPage() {
+//        guard let url = URL(string: "https://github.com/LarryJung/daily-commit-checker") else {
+//            return //be safe
+//        }
+//        
+//        if #available(iOS 10.0, *) {
+//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//        } else {
+//            UIApplication.shared.openURL(url)
+//        }
+//    }
 }
 
 extension String

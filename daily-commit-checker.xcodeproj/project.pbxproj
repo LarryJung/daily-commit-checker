@@ -14,6 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61152E23217CBD2D008F802A /* daily-commit-checker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "daily-commit-checker.entitlements"; sourceTree = "<group>"; };
 		61E41742217CAC0B00BCE7C7 /* daily-commit-checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "daily-commit-checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61E41745217CAC0B00BCE7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61E41747217CAC0B00BCE7C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		61E41744217CAC0B00BCE7C7 /* daily-commit-checker */ = {
 			isa = PBXGroup;
 			children = (
+				61152E23217CBD2D008F802A /* daily-commit-checker.entitlements */,
 				61E41745217CAC0B00BCE7C7 /* AppDelegate.swift */,
 				61E41747217CAC0B00BCE7C7 /* ViewController.swift */,
 				61E41749217CAC0D00BCE7C7 /* Assets.xcassets */,
@@ -95,6 +97,11 @@
 				TargetAttributes = {
 					61E41741217CAC0B00BCE7C7 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -271,7 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "daily-commit-checker/daily_commit_checker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daily-commit-checker/daily-commit-checker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "daily-commit-checker/Info.plist";
@@ -289,7 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "daily-commit-checker/daily_commit_checker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "daily-commit-checker/daily-commit-checker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "daily-commit-checker/Info.plist";

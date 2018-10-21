@@ -1,6 +1,0 @@
-version: "Apple Swift version 4.2 (swiftlang-1000.11.37.1 clang-1000.11.45.1)"
-options: "8ac0f8ac1c65357399c2b646adcf7442"
-build_time: [1540132321, 89138000]
-inputs:
-  "/Users/chaegyunjung/Documents/study/swift/daily-commit-checker/daily-commit-checker/ViewController.swift": [1540125835, 0]
-  "/Users/chaegyunjung/Documents/study/swift/daily-commit-checker/daily-commit-checker/AppDelegate.swift": [1540132320, 0]

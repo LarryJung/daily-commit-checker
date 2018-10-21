@@ -15,9 +15,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.title = "오늘 커밋 며칠째?"
-        if let button = statusItem.button {
-            button.action = #selector(getNumberToShow)
-        }
+//        if let button = statusItem.button {
+//            button.action = #selector(getNumberToShow)
+//        }
         constructMenu()
     }
     
@@ -73,8 +73,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func constructMenu() {
         let menu = NSMenu()
         
-//        menu.addItem(NSMenuItem(title: "About daily-checker", action: #selector(AppDelegate.linkAboutPage), keyEquivalent: "P"))
-//        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Update", action: #selector(AppDelegate.getNumberToShow), keyEquivalent: "P"))
+        menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
         statusItem.menu = menu
@@ -84,7 +84,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        guard let url = URL(string: "https://github.com/LarryJung/daily-commit-checker") else {
 //            return //be safe
 //        }
-//        
+//
 //        if #available(iOS 10.0, *) {
 //            UIApplication.shared.open(url, options: [:], completionHandler: nil)
 //        } else {

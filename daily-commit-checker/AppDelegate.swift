@@ -22,6 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url : String = "https://github.com/larryjung"
         var n = 0
         dataTask(url: url) { results in
+            print(results)
             let commits = results.toCommitsInfo()
             print(commits)
             for (i, c) in commits.reversed().enumerated() {
